@@ -9,6 +9,7 @@ if ($method =='POST') {
   $response->speech = $speech;
   $response->displayText= $speech;
   $response->source="webhook";
+  header('Content-Type: application/json');
   echo json_encode($response);
 }else{
   echo 'not a post method';
