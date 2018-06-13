@@ -6,12 +6,11 @@ if ($method =='POST') {
   $city = $json['queryResult']['parameters']['geo-city'];
   $speech = $city.' Are you sure is this metro city?';  
   $response = new \stdClass();
-  $response->speech = $speech;
-  $response->type=0;
+  $response->fulfillmentText = $speech;
+  $response->source ='webhook';
   header('Content-Type: application/json');
-  echo json_encode(['messages'=>[$response]]);
+  echo json_encode($response);
 }else{
   echo 'not a post method';
 }
-
 ?>
