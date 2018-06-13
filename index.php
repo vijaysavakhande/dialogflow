@@ -6,8 +6,8 @@ if ($method =='POST') {
   $city = $json['queryResult']['parameters']['geo-city'];
   $speech = $city.' Are you sure is this metro city?';  
   $response = new \stdClass();
-  $response->speech ="";
-  $response->displayText="";
+  $response->speech = $speech;
+  $response->displayText= $speech;
   $response->source="webhook";
   echo json_encode($response);
 }else{
