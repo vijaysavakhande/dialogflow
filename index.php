@@ -9,7 +9,7 @@ if ($method =='POST') {
   $response->speech = $speech;
   $response->type=0;
   header('Content-Type: application/json');
-  echo json_encode(['messages'=>$response]);
+  echo json_encode(['messages'=>[$response]]);
 }else{
   echo 'not a post method';
 }
