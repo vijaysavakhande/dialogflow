@@ -7,8 +7,7 @@ if ($method =='POST') {
   $speech = $city.' Are you sure is this metro city?';  
   $response = new \stdClass();
   $response->speech = $speech;
-  $response->displayText= $speech;
-  $response->source="webhook";
+  $response->type=0;
   header('Content-Type: application/json');
   echo json_encode($response);
 }else{
